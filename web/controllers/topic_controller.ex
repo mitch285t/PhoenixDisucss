@@ -4,7 +4,6 @@ defmodule Discuss.TopicController do
 
   def index(conn, _params) do
     topics = Repo.all(Topic)
-
     render(conn, "index.html", topics: topics)
   end
 
@@ -12,6 +11,7 @@ defmodule Discuss.TopicController do
     # struct = %Topic{}
     # params = %{}
     changeset = Topic.changeset(%Topic{}, %{})
+
     render(conn, "new.html", changeset: changeset)
   end
 
